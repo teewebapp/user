@@ -1,5 +1,6 @@
 {
     "enabled": true,
-    "seeder": "App\\Modules\\User\\Seeds\\DatabaseSeeder",
+    "seeder": "Tee\\User\\Seeds\\DatabaseSeeder",
+    "provider": ["Tee\\User\\ServiceProvider"],
     "order": 20
 }
