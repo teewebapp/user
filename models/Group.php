@@ -15,7 +15,7 @@ class Group extends Eloquent {
     protected $dates = ['deleted_at'];
 
     public function users() {
-        return $this->belongsToMany('App\\Modules\\User\\Models\\User');
+        return $this->belongsToMany(__NAMESPACE__.'\\User');
     }
 
 }

@@ -24,7 +24,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password', 'remember_token');
 
 	public function groups() {
-        return $this->belongsToMany('App\\Modules\\User\\Models\\Group');
+        return $this->belongsToMany(__NAMESPACE__.'\\Group');
     }
 
     public function getImageAttribute() {
