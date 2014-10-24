@@ -3,7 +3,7 @@
 namespace Tee\User;
 
 use Tee\User\Widgets\MainMenu;
-use Widget;
+use Tee\System\Widget;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 
