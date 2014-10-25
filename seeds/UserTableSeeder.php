@@ -11,9 +11,9 @@ class UserTableSeeder extends Seeder {
         Eloquent::unguard();
         DB::table('users')->delete();
         User::create(array(
-            //'id' => 1,
+            'name' => 'Admin',
             'email' => 'admin',
-            'password' => Hash::make('az09an'),
+            'password' => Hash::make('admin'),
             'created_at' => new DateTime,
             'updated_at' => new DateTime
         ));

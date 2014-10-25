@@ -6,7 +6,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Eloquent;
 
-class UserGroup extends Eloquent {
+class GroupUser extends Eloquent {
 
     use SoftDeletingTrait;
 

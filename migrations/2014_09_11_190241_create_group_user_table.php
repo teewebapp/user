@@ -19,8 +19,8 @@ class CreateGroupUserTable extends Migration {
 			$table->unsignedInteger('group_id');
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->foreign('group_id')->references('id')->on('groups');
-			$table->timestamps();
-			$table->softDeletes();
+			//$table->timestamps();
+			//$table->softDeletes();
 		});
 	}
 

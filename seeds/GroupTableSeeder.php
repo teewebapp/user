@@ -13,9 +13,7 @@ class GroupTableSeeder extends Seeder {
         Group::create(array(
             'id' => 1,
             'name' => 'Administrador',
-            'type' => Group::ADMIN,
-            'created_at' => new DateTime,
-            'updated_at' => new DateTime
+            'type' => Group::ADMIN
         ));
     }
     
