@@ -11,7 +11,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 
     public function register()
     {
-        App::register('Cviebrock\EloquentSluggable\SluggableServiceProvider');
-        App::register('Codesleeve\LaravelStapler\LaravelStaplerServiceProvider');
+        //App::register('Cviebrock\EloquentSluggable\SluggableServiceProvider');
+        //App::register('Codesleeve\LaravelStapler\LaravelStaplerServiceProvider');
     }
 }
