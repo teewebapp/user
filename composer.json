@@ -7,15 +7,9 @@
 		"teewebapp/system": "dev-master@dev"
 	},
 	"autoload": {
-		"classmap": [
-			"commands",
-			"controllers",
-			"migrations",
-			"models",
-			"seeds",
-			"tests",
-			"ServiceProvider.php"
-		]
+		"psr-4": {
+			"Tee\\User": "."
+		}
 	},
 	"minimum-stability": "stable"
 }
