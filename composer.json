@@ -8,7 +8,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"Tee\\User": "."
+			"Tee\\User\\": "."
 		}
 	},
 	"minimum-stability": "stable"
