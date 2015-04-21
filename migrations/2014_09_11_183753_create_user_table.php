@@ -19,6 +19,8 @@ class CreateUserTable extends Migration {
 			$table->string('email', 100);
 			$table->string('password', 256);
 			$table->string('remember_token', 100)->nullable();
+			$table->unsignedInteger('site_id');
+			$table->foreign('site_id')->references('id')->on('sites');
 			$table->timestamps();
 			$table->softDeletes();
 		});

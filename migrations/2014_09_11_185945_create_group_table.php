@@ -17,6 +17,8 @@ class CreateGroupTable extends Migration {
 			$table->increments('id');
 			$table->string('name', 100);
 			$table->integer('type');
+			$table->unsignedInteger('site_id');
+			$table->foreign('site_id')->references('id')->on('sites');
 			$table->timestamps();
 			$table->softDeletes();
 		});
