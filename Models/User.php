@@ -10,7 +10,9 @@ use Illuminate\Database\Eloquent\SoftDeletingTrait;
 use Tee\System\Traits\CurrentSiteTrait;
 use Eloquent, URL, Hash;
 
-class User extends Eloquent implements UserInterface, RemindableInterface
+use Tee\System\Models\Model;
+
+class User extends Model implements UserInterface, RemindableInterface
 {
     use CurrentSiteTrait;
 	use UserTrait, RemindableTrait, SoftDeletingTrait;
@@ -53,13 +55,20 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
 
     /**
-     * Getter for $user->confirm_key
-     * Return confirm key used in email confirmation
+     * Generate a confirm key
      * @return string
      */
-    public function getConfirmKeyAttribute()
+    public function generateConfirmKey()
     {
         return base64_encode(Hash::make($this->id . 'confirm'));
+    }
+
+    /**
+     * Check if a key is valid
+     */
+    public function checkConfirmKey($key)
+    {
+        return Hash::check($this->id . 'confirm', base64_decode($key));
     }
 
     /**
@@ -71,7 +80,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         return route('user.confirm', [
             'user' => $this->id,
-            'key' => $this->confirm_key
+            'key' => $this->generateConfirmKey()
         ]);
     }
 }
